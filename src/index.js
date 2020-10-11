@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
+import AppRoutes from './routes';
+import firebase from 'firebase/app';
+
+firebase.initializeApp({
+  apiKey: "AIzaSyAnsfXZz6Uw56FqhixjK7h7FC3h6k2TSLA",
+  authDomain: "gameshidden-fabae.firebaseapp.com",
+  databaseURL: "https://gameshidden-fabae.firebaseio.com",
+  projectId: "gameshidden-fabae",
+  storageBucket: "gameshidden-fabae.appspot.com",
+  messagingSenderId: "207637008396",
+  appId: "1:207637008396:web:89962edd5e3d79beae9e29",
+  measurementId: "G-VGNGW2ZR75"
+})
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <AppRoutes></AppRoutes>
+  </Router>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
